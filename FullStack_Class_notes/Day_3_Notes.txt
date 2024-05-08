@@ -1,0 +1,40 @@
+__init__.py
+considered as a python package
+
+wsgi.py
+(Web Sever gateway interface)
+
+asgi.py
+(Asynchoronous Server Gateway interface)
+
+setting.py
+all the information or data about project settings.
+e.g,.: 
+
+
+
+To create a Superuser:
+py manage.py createsuperuser
+
+
+MIGRATIONS:
+	migrations are Django's way of propagating changes you make to your MODELS (add a field, delete, update etc.) into DB schema. they are desinged to be mostly automatically.
+
+makemigrations:
+	py manage.py makemigrations
+
+migrate:
+	py manage.py migrate
+
+
+
+To create an APP:
+
+py manage.py startapp <app_name>
+
+
+
+'''
+Create a project with 3 apps (login, register, profile) connect them.
+'''
+
