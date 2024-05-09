@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>{{title}}</h1>
+
+        <div>
+            <h3> TEAM {{title}}</h3>
+        <ol>
+        {% for player in players %}
+            <li>{{ player }}</li>
+        {% endfor %}
+        </ol>
+        </div>
+        
+        {% comment %} {% if points|length>0 %} {% endcomment %}
+            {% for i in points %}
+                {% if i > 40 %}
+                    <li>PASS</li>
+                {% else %}
+                    <li>FAIL</li>
+                {% endif %}
+            {% endfor %}
+        {% comment %} {% endif %} {% endcomment %}
+
+        <table border="2px" cellspacing="0px" width="60%">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Name</th>
+                    <th>CITY</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in teams %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td> {{ i.name }}</td>
+                    <td>{{ i.city }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <script src="" async defer></script>
+    </body>
+</html>

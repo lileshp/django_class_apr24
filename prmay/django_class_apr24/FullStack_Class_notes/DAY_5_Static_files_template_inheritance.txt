@@ -1,0 +1,55 @@
+08/May/2024 - DJANGO
+
+Static Files:
+	CSS, JS, images, videos files are considered as static files in Django.
+
+Django provides us django.contrib.staticfiles to help us manage them.
+
+STATIC FILES from the root directory:
+
+1. create a static folder inside root project directory
+2. create css, js, images eg folder inside static directory
+3. create a view
+4. define url for view function
+5. write template code and add static files in template.
+
+settings.py:
+STATIC_DIR = BASE_DIR/'static'
+STATICFILES_DIRS = [STATIC_DIR]
+
+
+
+
+
+TEMPLATE INHERITANCE:
+	template inheritance allows us to build a base skeleton template that contains all the common elements of the site and defines blocks that child templates can override.
+
+
+the extends tag is used to inherit template.
+
+extends tag tells the template engine that this template "extends" another template.
+There is no need to close extend.
+{% extends 'template_name' %}
+{% extends variable %}
+
+
+{% block %} - is used to for overriding specific parts of the template.
+
+{% block <blockname> %} {% endblock <blockname> %}
+
+
+Rules:
+1. if we are using {% extends %} in a template, it must be the first template tag in that template, otherwise it will not working.
+2. More {% block %} tage in our base templates are better.
+3. we can't define multiple block tags with the same name in the same template.
+4. {{ block.super }} variable is use to get the ccontent of the block from the parent template.
+
+
+
+
+
+
+
+
+
+

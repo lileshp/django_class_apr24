@@ -1,0 +1,33 @@
+DTL (Django template language)
+
+DTL is designed to work with HTML (template).
+
+Variables:
+	{{ variables }}
+
+
+Filters:
+	when we need to modify variables. "|" is used to apply filters
+	syntax: {{ variable | filter | filter}}
+
+
+Conditional Statement:
+
+	{% if variable %}
+	........
+	{% elif condition %}
+	........
+	{% else %}
+	........
+	{% endif %}
+	
+	{% for variable in iterable %}
+	{{ variable }}
+	{% endfor %}
+
+
+
+{{forloop.counter}} => the current iteration number of the loop (1 - index)
+{{forloop.counter0}} => the current iteration number of the loop (0 - index)
+{{forloop.revcounter}} => the current iteration number of the loop from the end of the loop (1 - index)
+{{forloop.revcounter0}} => the current iteration number of the loop from the end of the loop (0 - index)

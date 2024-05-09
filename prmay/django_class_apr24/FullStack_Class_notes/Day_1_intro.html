@@ -1,0 +1,131 @@
+<!-- HTML, CSS, JS, Core Python, Database -->
+<!-- HTML - WEB/CSS - STyling/ XML - Mobile interface/WML/-->
+<!-- SGML standards -->
+<!--
+    Responsiveness - Device width , Plugins
+    HTML 5 - 20px, 16px, 12px
+
+    maintain - w3c orgnization
+    HTML 5 - W3C, WHATWG
+
+    collection of predefined tags
+    interpret
+    runs on browser
+    HTTP/HTTPS - 80/443
+    doesn't return error
+    tags:
+        paired tag - <tag> content </tag>
+        non paired tag - <tag /> (img, br, hr, input)
+
+        syntax tag - html, head, body, title
+        formatting tags
+        list
+        table
+        media (img, audio, video, iframe)
+        form - ()
+    
+    display content on webpage:
+        1. inline
+        2. block
+    
+    semantic tags
+-->
+<!DOCTYPE html> <!-- indication for browser that page runs on HTML 5-->
+<html>
+    <head>
+        <title>FISRT PAGE</title>
+    </head>
+    <body>
+        <!-- document/ Window (DOM/WOM) -->
+    </body>
+    <>
+        <h1> Heading 1 </h1>
+        <h2>HEADING 2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, laudantium.</p>
+        <br/>
+        <b>BOLD</b> 
+        <strong>BOLD</strong> <br/>
+        <i>Italic</i>
+        <em>Italic</em> <br/>
+        <u>Underline</u>
+        <ins>Underline</ins> <br/>
+        <del>Old Price 100/-</del>
+        <strike>Old Price 100/-</strike><br/>
+
+        <p>2<sup>2</sup> = 4 1<sup>st</sup></p>
+        <p>log <sub>n</sub></p>
+
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>HEADING 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <h7><b>Heading 7</b></h7>
+        <mark>HELLO</mark> <br/>
+
+
+        <b>HEADING</b>
+        <h4>HEADING</h4>
+
+
+        <!-- 
+            LIST:
+            ordered list
+            unordered list
+            definition list
+        -->
+        <ol type="1" start = "1001">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+            <li>BootsTrap</li>
+        </ol>
+
+        <ul type="square">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+            <li>BootsTrap</li>
+        </ul>
+
+        <dl>
+            <dt>HTML</dt>
+            <dd>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At excepturi blanditiis quisquam ut velit sit odio quae neque. Delectus, nulla!</dd>
+            <dt>CSS</dt>
+            <dd>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde sapiente similique esse provident, aliquam eaque nemo recusandae velit quos suscipit, nostrum possimus libero. A.</dd>
+        </dl>
+
+
+        <form name="registration" action = "reg.py" method = "get" enctype="" formaction = "" onsubmit = "">
+            <!-- 
+                GET:
+                    URL(Address bar) box
+                    text form
+                    1024 byte send and recieve
+                    can not send binary data (images, video, graphics)
+                    do not use when you want to send secure data
+                    Fast
+                POST:
+                    HTTP header
+                    encrypted
+                    unlimited length
+                    can send binary data
+                    secure, taking time
+
+            -->
+            <input type = "text" name = "firstName"/>
+        </form>
+        
+        <form name="login" action="login.py">
+
+        </form>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </body>
+</html>
