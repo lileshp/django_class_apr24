@@ -1,0 +1,107 @@
+ORM - Object Relational Mapper
+
+	which enables application to interact with database.
+ORM automatically create a database schema from defined classes or models. It generate SQL from python code for a particular database, which means developer do not need to write SQL code.
+
+ORM maps objects attributes to respective table fields.
+
+
+MODEL:
+
+a model is the single, definitive source of information about data.
+it stores the essential fields and behaviours of the data.
+Generally, each model maps to a single database table.
+
+Each model is a python class that subclass django.db.models.Model
+Each attribute of the model represent a database field.
+
+Syntax:
+class ClassName(models.Model):
+	field_name = models.FieldType(arg, options)
+
+"create table student (id int, name varchar(200) NOT NULL)"
+
+
+table name will be ApplicationName_ClassName
+field_name become table's column name
+if we are not mentioned primary key in any columns, django automatically create a new column named 'id' with datatype Integer and primary key, auto increment.
+
+
+Rules to create a Model:
+
+Field Name cannot be a python reserved words/keywords, otherwise it will throw syntax Error.
+field name cannot contain more than one underscore in row.
+field name cannot end with an underscore
+
+How to use Models:
+add app in INSTALLED_APPS = []
+
+run cmd -> py manage.py makemigrations
+
+run cmd -> py manage.py migrate
+
+
+Create a model in blog app:
+from django.db import models
+
+# Create your models here.
+class Student(models.Model):
+    stdid = models.IntegerField()
+    stdname = models.CharField(max_length=100)
+    stdemail = models.EmailField(max_length=100)
+    stdpwd = models.CharField(max_length=50)
+
+
+
+Insert data into model:
+
+open command prompt:
+> py manage.py shell
+>>> from blog.models from Student
+>>> Student.objects.all()
+<QuerySet []>
+>>> data = Student(stdid = 101, stdname = "john", stdemail = "john@example.com", stdpwd = "123456")
+>>> data.save()
+>>> Student.objects.all()
+<QuerySet [<Student: Student object (1)>]>
+>>> Student.objects.all().values()
+<QuerySet [{'id': 1, 'stdid': 101, 'stdname': 'john', 'stdemail': 'john@example.com', 'stdpwd': '123456'}]>
+>>> std1 = Student(stdid = 102, stdname = "mac", stdemail = "mac@ex.com", stdpwd = "123456")
+>>> std2 = Student(stdid = 103, stdname = "sam", stdemail = "sam@ex.com", stdpwd = "123456")
+>>> std3 = Student(stdid = 104, stdname = "peter", stdemail = "peter@ex.com", stdpwd = "123456")
+>>> std4 = Student(stdid = 105, stdname = "jack", stdemail = "jack@ex.com", stdpwd = "123456")
+>>> data = [std1, std2, std3, std4]
+>>> for i in data:
+...     i.save()
+...
+>>> Student.objects.all()
+<QuerySet [<Student: Student object (1)>, <Student: Student object (2)>, <Student: Student object (3)>, <Student: Student object (4)>, <Student: Student object (5)>]>
+>>> Student.objects.all().values()
+<QuerySet [{'id': 1, 'stdid': 101, 'stdname': 'john', 'stdemail': 'john@example.com', 'stdpwd': '123456'}, {'id': 2, 'stdid': 102, 'stdname': 'mac', 'stdemail': 'mac@ex.com', 'stdpwd': '123456'}, {'id': 3, 'stdid': 103, 'stdname': 'sam', 'stdemail': 'sam@ex.com', 'stdpwd': '123456'}, {'id': 4, 'stdid': 104, 'stdname': 'peter', 'stdemail': 'peter@ex.com', 'stdpwd': '123456'}, {'id': 5, 'stdid': 105, 'stdname': 'jack', 'stdemail': 'jack@ex.com', 'stdpwd': '123456'}]>
+>>>
+
+
+
+UPDATE DATA INTO MODEL:
+
+> py manage.py shell
+>>> from blog.models from Student
+>>> Student.objects.all()
+<QuerySet []>
+>>> data = Student(stdid = 101, stdname = "john", stdemail = "john@example.com", stdpwd = "123456")
+>>> data.save()
+>>> da = Student.objects.all()[0]
+>>> da.stdemail = "cooljohn@gmail.com"
+>>> da.save()
+>>> Student.objects.all().values()
+
+
+
+
+
+
+
+
+
+
+
