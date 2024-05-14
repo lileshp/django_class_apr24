@@ -1,0 +1,47 @@
+ADMIN INTERFACE/Application
+
+it is a built-in application provided by DJango.
+this application provides admin interface for CRUD operations without writting SQL queries
+
+https://127.0.0.1:8000/admin
+
+to access admin application we need a superuser.
+
+How to register a Model:
+open admin.py then import your Model class
+then register your model
+
+
+__str__() Method
+
+the __str__() method is called whenever we call str() on an object
+
+
+ModelAdmin:
+is a representation of a model in the admin interface.
+
+class ModelAdminClass(admin.ModelAdmin):
+	list_display = ('field1', 'field2' ...)
+
+Register modeladminclass:
+admin.site.register(ModelClassName, ModelAdminClassName)
+
+e.g.:
+
+@admin.register(Student)
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ('stdid', 'stdname','stdemail','stdpwd')
+# admin.site.register(Student,StudentAdmin)
+
+
+
+
+
+
+
+
+
+
+
+
+
