@@ -1,0 +1,13 @@
+DAY_8 [CRUD APP] 13/05/2024
+
+GET and POST
+
+GET method:
+	process request from URL/Address bar
+	cannot process more than 1024 byte
+	cannot process binary data(images, videos, doc etc.)
+	
+
+CSRF - Cross Site Request Forgery
+
+{% csrf_token %}
