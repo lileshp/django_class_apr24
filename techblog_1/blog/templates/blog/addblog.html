@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}ADD A BLOG{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-sm-10">
+            <h2 class="text-center">ADD BLOG</h2>
+            <form action = "" method="post" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value = "Add Blog" class="btn btn-success">
+                <a class="btn btn-warning" href = "{% url 'dashboard' %}">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

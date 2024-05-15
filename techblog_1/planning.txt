@@ -1,0 +1,13 @@
+TECH BLOG:
+
+    Admin interface
+    Home Page(First Page of project)
+    Registration
+    Login
+    Logout
+    Dashboard
+    Add blog
+    update blog
+    delete
+    About
+    Contact
